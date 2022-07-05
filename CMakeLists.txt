@@ -64,3 +64,8 @@ add_executable(FunctionPointers ${SRC})
 set(SRC Templates.cpp)
 add_executable(Templates ${SRC})
 
+set(SRC Iterators.cpp)
+add_executable(Iterators ${SRC})
+
+set(SRC Arrays.cpp)
+add_executable(Arrays ${SRC})

@@ -31,7 +31,7 @@ void foreach(std::vector<int> values, void(*func)(int&))
 
 int main()
 {
-    typedef void(*doWork_ptr)();
+    typedef void(*doWork_ptr)(); // this defines a function pointer without parameters as doWork_ptr
     typedef void(*printA_ptr)(int);
 
     auto function = doWork; 
@@ -57,7 +57,7 @@ int main()
     std::cout << std::endl;
     std::cout << std::endl;
 
-    foreach(values, [](int &value){ std::cout << "Value:" << value << std::endl;});
+    foreach(values, [](int &value){ std::cout << "Value:" << value << std::endl;}); // this is a lambda
 
 
 }

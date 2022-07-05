@@ -41,7 +41,7 @@ int main()
     int arrarySize = array.getSize();
     printTemplate(arrarySize);
 
-    Array<int, 5> array;
+    // Array<int, 5> array;
 
 
 }
