@@ -78,3 +78,9 @@ add_executable(Benchmarking ${SRC})
 
 set(SRC MultidimensionalArray.cpp)
 add_executable(MultidimensionalArray ${SRC})
+
+set(SRC Sort.cpp)
+add_executable(Sort ${SRC})
+
+set(SRC TypePunning.cpp)
+add_executable(TypePunning ${SRC})
