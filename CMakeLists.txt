@@ -69,3 +69,12 @@ add_executable(Iterators ${SRC})
 
 set(SRC Arrays.cpp)
 add_executable(Arrays ${SRC})
+
+set(SRC Chrono.cpp)
+add_executable(Chrono ${SRC})
+
+set(SRC Benchmarking.cpp)
+add_executable(Benchmarking ${SRC})
+
+set(SRC MultidimensionalArray.cpp)
+add_executable(MultidimensionalArray ${SRC})

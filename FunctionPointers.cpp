@@ -1,6 +1,7 @@
     
 #include <iostream>
 #include <vector>
+#include <functional>
 
 static bool s_Finished = false;
 
@@ -59,5 +60,11 @@ int main()
 
     foreach(values, [](int &value){ std::cout << "Value:" << value << std::endl;}); // this is a lambda
 
+
+    std::cout << std::endl;
+
+    std::vector<int>::iterator it = std::find_if(values.begin(), values.end(), [](int value) {return value > 3;});
+    
+    std::cout << *it << std::endl;
 
 }
