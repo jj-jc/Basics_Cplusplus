@@ -90,3 +90,6 @@ add_executable(Unions ${SRC})
 
 set(SRC VirtualDestructors.cpp)
 add_executable(VirtualDestructors ${SRC})
+
+set(SRC Casting.cpp)
+add_executable(Casting ${SRC})
