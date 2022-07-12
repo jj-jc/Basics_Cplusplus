@@ -84,3 +84,6 @@ add_executable(Sort ${SRC})
 
 set(SRC TypePunning.cpp)
 add_executable(TypePunning ${SRC})
+
+set(SRC Unions.cpp)
+add_executable(Unions ${SRC})
