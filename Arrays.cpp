@@ -4,7 +4,7 @@
 
 void printArray(std::array<int,5> array)
 {
-
+-
 }
 
 int main()
