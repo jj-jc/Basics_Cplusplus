@@ -87,3 +87,6 @@ add_executable(TypePunning ${SRC})
 
 set(SRC Unions.cpp)
 add_executable(Unions ${SRC})
+
+set(SRC VirtualDestructors.cpp)
+add_executable(VirtualDestructors ${SRC})
