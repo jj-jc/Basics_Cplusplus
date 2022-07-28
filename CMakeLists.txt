@@ -99,3 +99,6 @@ add_executable(DynamicCast ${SRC})
 
 set(SRC Structure_Bindings.cpp)
 add_executable(Structure_Bindings ${SRC})
+
+set(SRC Singleton.cpp)
+add_executable(Singleton ${SRC})
