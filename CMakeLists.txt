@@ -93,3 +93,9 @@ add_executable(VirtualDestructors ${SRC})
 
 set(SRC Casting.cpp)
 add_executable(Casting ${SRC})
+
+set(SRC DynamicCast.cpp)
+add_executable(DynamicCast ${SRC})
+
+set(SRC Structure_Bindings.cpp)
+add_executable(Structure_Bindings ${SRC})
