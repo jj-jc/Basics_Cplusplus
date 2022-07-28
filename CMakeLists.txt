@@ -102,3 +102,6 @@ add_executable(Structure_Bindings ${SRC})
 
 set(SRC Singleton.cpp)
 add_executable(Singleton ${SRC})
+
+set(SRC Asynchronous.cpp)
+add_executable(Asynchronous ${SRC})
