@@ -105,3 +105,6 @@ add_executable(Singleton ${SRC})
 
 set(SRC Asynchronous.cpp)
 add_executable(Asynchronous ${SRC})
+
+set(SRC Track_Memory_Allocation.cpp)
+add_executable(Track_Memory_Allocation ${SRC})
