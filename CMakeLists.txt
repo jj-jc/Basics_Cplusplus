@@ -108,3 +108,6 @@ add_executable(Asynchronous ${SRC})
 
 set(SRC Track_Memory_Allocation.cpp)
 add_executable(Track_Memory_Allocation ${SRC})
+
+set(SRC lrvalues.cpp)
+add_executable(lrvalues ${SRC})
