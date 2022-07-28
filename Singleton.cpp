@@ -17,7 +17,6 @@ class Singleton
 
 Singleton Singleton::s_Instance;
 
-
 class Random
 {
     public:
@@ -42,7 +41,6 @@ class Random
 
 Random Random::s_Instance;
 
-
 int main()
 {
     auto& singletonInstance = Singleton::get();
@@ -50,5 +48,4 @@ int main()
     float randomNumber = Random::get().generateFloat();
 
     std::cout << randomNumber << std::endl;
-
 }
