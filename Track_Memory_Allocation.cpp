@@ -17,16 +17,16 @@ static void printMemoryUsage()
 }
 
 // overload new operator to controll the memoery allocation
-void* operator new(size_t size)
+void *operator new(size_t size)
 {
     std::cout << "Allocating " << size << " bytes\n";
 
     s_AllocationMetrics.TotalAllocated += size;
 
     return malloc(size);
-} 
+}
 
-void operator delete(void* memory, size_t size)
+void operator delete(void *memory, size_t size)
 {
     std::cout << "Deleting from " << memory << ", " << size << " bytes\n";
 
@@ -45,7 +45,7 @@ int main()
     std::string string = "Cherno";
 
     printMemoryUsage();
-    Object* obj = new Object; // this is a new allocation. 
+    Object *obj = new Object; // this is a new allocation.
 
     std::unique_ptr<Object> object = std::make_unique<Object>();
 

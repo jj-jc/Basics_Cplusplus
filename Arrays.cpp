@@ -1,13 +1,12 @@
 #include <iostream>
 #include <array>
 
-
-void printArray(std::array<int,5> array)
+void printArray(std::array<int, 5> array)
 {
-        std::cout << "Array = { ";
-    for (const auto& item: array)
+    std::cout << "Array = { ";
+    for (const auto &item : array)
     {
-        if(array[0] != item)
+        if (array[0] != item)
             std::cout << ", ";
         std::cout << item;
     }
@@ -16,9 +15,9 @@ void printArray(std::array<int,5> array)
 
 int main()
 {
-    std::array<int, 5> data{1,2,3,5,7};
-    
+    std::array<int, 5> data{1, 2, 3, 5, 7};
+
     printArray(data);
 
-return true;
+    return true;
 }

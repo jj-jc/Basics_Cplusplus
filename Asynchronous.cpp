@@ -2,6 +2,5 @@
 #include <future>
 
 int main()
-{ 
-
+{
 }

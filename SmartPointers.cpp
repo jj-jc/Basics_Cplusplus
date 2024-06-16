@@ -20,7 +20,6 @@ public:
     }
 };
 
-
 int main()
 {
     std::shared_ptr<Entity> e0; // once all the references scopes ends will delete the memory allocation ( in this example in the final of this program)
@@ -30,17 +29,13 @@ int main()
         // std::unique_ptr<Entity> entity = new Entity(); // This way is not possible (copy of a pointer)
         // std::unique_ptr<Entity> entity2 = std::make_unique<Entity>(); // safest way to create a smart pointer
         // entity->print();
-        
 
         // SHARED POINTER
         std::shared_ptr<Entity> sharedEntity = std::make_shared<Entity>();
-        e0 = sharedEntity; 
+        e0 = sharedEntity;
 
         // WEAK POINTER
-
     }
-
-
 
     std::cin.get();
 }

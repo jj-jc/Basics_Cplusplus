@@ -8,28 +8,28 @@ struct Vector2
     Vector2(float x, float y)
         : x(x), y(y) {}
 
-    Vector2 operator+(const Vector2& other) const
+    Vector2 operator+(const Vector2 &other) const
     {
         return Vector2(x + other.x, y + other.y);
     }
 
-    Vector2 operator*(const Vector2& other) const
+    Vector2 operator*(const Vector2 &other) const
     {
         return Vector2(x * other.x, y * other.y);
     }
 
-    bool operator==(const Vector2& other) const
+    bool operator==(const Vector2 &other) const
     {
         return x == other.x && y == other.y;
     }
 
-    bool operator!=(const Vector2& other) const
+    bool operator!=(const Vector2 &other) const
     {
         return !(*this == other);
     }
 };
 
-std::ostream& operator<<(std::ostream& stream, const Vector2& other)
+std::ostream &operator<<(std::ostream &stream, const Vector2 &other)
 {
     stream << other.x << ", " << other.y;
     return stream;
@@ -45,7 +45,6 @@ int main()
     Vector2 result = position + speed * powerup;
 
     std::cout << result << std::endl;
-    
 
     std::cin.get();
 }

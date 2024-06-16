@@ -32,16 +32,16 @@ int main()
     std::cout << "Unordered_map iterator " << std::endl;
     for (ScoreMap::const_iterator it = map.begin(); it != map.end(); it++)
     {
-        auto& key = it->first;
-        auto& value = it->second;
+        auto &key = it->first;
+        auto &value = it->second;
         std::cout << key << " = " << value << std::endl;
     }
 
     std::cout << "Unordered_map range loop " << std::endl;
     for (auto kv : map)
     {
-        auto& key = kv.first;
-        auto& value = kv.second;
+        auto &key = kv.first;
+        auto &value = kv.second;
         std::cout << key << " = " << value << std::endl;
     }
 
@@ -50,9 +50,4 @@ int main()
     {
         std::cout << key << " = " << value << std::endl;
     }
-
-
-
-
-
 }

@@ -3,10 +3,11 @@
 class Entity
 {
 private:
-    const char* m_Name = "Yoyosplay";
+    const char *m_Name = "Yoyosplay";
     mutable int m_DebugCount = 0;
+
 public:
-    const char* getName() const
+    const char *getName() const
     {
         m_DebugCount++;
         return m_Name;
@@ -27,7 +28,6 @@ int main()
     };
 
     f();
-    
-    std::cin.get();
 
+    std::cin.get();
 }

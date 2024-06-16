@@ -1,4 +1,4 @@
-    
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,13 +12,12 @@ void doWork()
 
     std::cout << "Started thread id = " << std::this_thread::get_id() << std::endl;
 
-    while(!s_Finished)
+    while (!s_Finished)
     {
         std::cout << "Working ..." << std::endl;
         std::this_thread::sleep_for((1s));
     }
 }
-
 
 int main()
 {
@@ -31,5 +30,4 @@ int main()
     worker.join(); // wait for the thread worker to finish its work. Block the current thread till the worker thread is finished,
     std::cout << "Finish ..." << std::endl;
     std::cout << "Started thread id = " << std::this_thread::get_id() << std::endl;
-
 }

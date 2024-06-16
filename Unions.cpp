@@ -8,32 +8,32 @@ struct Vector2
 struct Vector4
 {
     float x, y, z, w;
-    Vector2& GetA()
+    Vector2 &GetA()
     {
-        return *(Vector2*)&x; // Return the reference to a Vector 2 ( so  includes x and y information)
+        return *(Vector2 *)&x; // Return the reference to a Vector 2 ( so  includes x and y information)
     }
 };
 
 struct Vector4Prettier
 {
-    union 
+    union
     {
-        struct 
+        struct
         {
             float x, y, z, w;
         };
 
-        struct 
+        struct
         {
             float r, g, b, a;
         };
 
-        struct 
+        struct
         {
             Vector2 v1, v2;
         };
     };
-    
+
     // float p;
     // float x, y, z, w; // it is not possible to define the same names that in the struct
 };
@@ -49,10 +49,9 @@ struct Union
 
 struct Test
 {
-
 };
 
-void printVector2(const Vector2& vector)
+void printVector2(const Vector2 &vector)
 {
     std::cout << vector.x << ", " << vector.y << std::endl;
 }
@@ -71,5 +70,4 @@ int main()
     std::cout << "Vector4Prettier.a: " << vector4Prettier.a << std::endl;
     // std::cout << "Vector4Prettier.v1: " << vector4Prettier.v1 << std::endl;
     printVector2(vector4Prettier.v1);
-
 }

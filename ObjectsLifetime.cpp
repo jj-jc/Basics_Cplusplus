@@ -3,12 +3,12 @@
 
 class Entity
 {
-public: 
-    Entity() { std::cout << "Created Entity!" << std::endl;}
-    ~Entity() { std::cout << "Destroyed Entity!" << std::endl;}
+public:
+    Entity() { std::cout << "Created Entity!" << std::endl; }
+    ~Entity() { std::cout << "Destroyed Entity!" << std::endl; }
 };
 
-int* CreateArray()
+int *CreateArray()
 {
     int array[50];
     return array;
@@ -18,12 +18,12 @@ int* CreateArray()
 class ScopedPtr
 {
 private:
-    Entity* m_Ptr;
-public:
-    ScopedPtr(Entity* ptr)
-        :m_Ptr(ptr)
-    {
+    Entity *m_Ptr;
 
+public:
+    ScopedPtr(Entity *ptr)
+        : m_Ptr(ptr)
+    {
     }
 
     ~ScopedPtr()
@@ -32,7 +32,6 @@ public:
     }
 };
 
-
 int main()
 {
     {
@@ -40,7 +39,7 @@ int main()
     }
 
     {
-        Entity* e = new Entity(); // This is not destroyed because is in the heap memory
+        Entity *e = new Entity(); // This is not destroyed because is in the heap memory
     }
 
     {

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 
-
 void printValue(int value)
 {
     std::cout << value << std::endl;
@@ -12,7 +11,7 @@ void printValue(std::string value)
     std::cout << value << std::endl;
 }
 
-template<typename T> 
+template <typename T>
 void printTemplate(T value)
 {
     std::cout << value << std::endl;
@@ -21,10 +20,11 @@ void printTemplate(T value)
 template <typename T, int N>
 class Array
 {
-    private:
-        T m_Array[N];
-    public:
-        int getSize() const {return N;}
+private:
+    T m_Array[N];
+
+public:
+    int getSize() const { return N; }
 };
 
 int main()
@@ -42,6 +42,4 @@ int main()
     printTemplate(arrarySize);
 
     // Array<int, 5> array;
-
-
 }
