@@ -2,34 +2,30 @@
 #include <iostream>
 #include <string>
 
-class Entity
-{
-public:
-    virtual std::string GetName() { return "Entity"; }
+class Entity {
+ public:
+  virtual std::string GetName() { return "Entity"; }
 };
 
-class Player : public Entity
-{
-private:
-    std::string m_Name;
+class Player : public Entity {
+ private:
+  std::string m_Name;
 
-public:
-    Player(const std::string &name)
-        : m_Name(name) {}
+ public:
+  Player(const std::string &name) : m_Name(name) {}
 
-    std::string GetName() override { return m_Name; }
+  std::string GetName() override { return m_Name; }
 };
 
-int main()
-{
-    Entity *e = new Entity();
-    std::cout << e->GetName() << std::endl;
+int main() {
+  Entity *e = new Entity();
+  std::cout << e->GetName() << std::endl;
 
-    Player *p = new Player("Cherno");
-    std::cout << p->GetName() << std::endl;
+  Player *p = new Player("Cherno");
+  std::cout << p->GetName() << std::endl;
 
-    Entity *entity = p;
-    std::cout << entity->GetName() << std::endl;
+  Entity *entity = p;
+  std::cout << entity->GetName() << std::endl;
 
-    std::cin.get();
+  std::cin.get();
 }

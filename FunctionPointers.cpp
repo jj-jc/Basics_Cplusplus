@@ -1,70 +1,58 @@
 
+#include <functional>
 #include <iostream>
 #include <vector>
-#include <functional>
 
 static bool s_Finished = false;
 
-void doWork()
-{
-    std::cout << "Hello World!" << std::endl;
+void doWork() { std::cout << "Hello World!" << std::endl; }
+
+void printA(int a) { std::cout << "Hello World!" << a << std::endl; }
+
+void printValue(int& value) { std::cout << "Value: " << value << std::endl; }
+
+void foreach (std::vector<int> values, void (*func)(int&)) {
+  for (int& value : values) {
+    func(value);
+  }
 }
 
-void printA(int a)
-{
-    std::cout << "Hello World!" << a << std::endl;
-}
+int main() {
+  typedef void (*doWork_ptr)();  // this defines a function pointer without
+                                 // parameters as doWork_ptr
+  typedef void (*printA_ptr)(int);
 
-void printValue(int &value)
-{
-    std::cout << "Value: " << value << std::endl;
-}
+  auto function = doWork;
 
-void foreach (std::vector<int> values, void (*func)(int &))
-{
-    for (int &value : values)
-    {
-        func(value);
-    }
-}
+  function();
+  function();
 
-int main()
-{
-    typedef void (*doWork_ptr)(); // this defines a function pointer without parameters as doWork_ptr
-    typedef void (*printA_ptr)(int);
+  void (*cherno)() = doWork;
+  cherno();
 
-    auto function = doWork;
+  doWork_ptr copydoWork = doWork;
+  doWork_ptr();
 
-    function();
-    function();
+  printA_ptr copyprintA = printA;
+  copyprintA(2);
 
-    void (*cherno)() = doWork;
-    cherno();
+  std::cout << std::endl;
+  std::cout << std::endl;
 
-    doWork_ptr copydoWork = doWork;
-    doWork_ptr();
+  std::vector<int> values = {1, 2, 4, 5, 1, 3};
+  // foreach (values, printValue);
 
-    printA_ptr copyprintA = printA;
-    copyprintA(2);
+  std::cout << std::endl;
+  std::cout << std::endl;
 
-    std::cout << std::endl;
-    std::cout << std::endl;
+  foreach (values, [](int& value) {
+    std::cout << "Value:" << value << std::endl;
+  });  // this is a lambda
 
-    std::vector<int> values = {1, 2, 4, 5, 1, 3};
-    foreach (values, printValue)
-        ;
+  std::cout << std::endl;
 
-    std::cout << std::endl;
-    std::cout << std::endl;
+  std::vector<int>::iterator it = std::find_if(
+      values.begin(), values.end(), [](int value) { return value > 3; });
 
-    foreach (values, [](int &value)
-             { std::cout << "Value:" << value << std::endl; })
-        ; // this is a lambda
-
-    std::cout << std::endl;
-
-    std::vector<int>::iterator it = std::find_if(values.begin(), values.end(), [](int value)
-                                                 { return value > 3; });
-
-    std::cout << *it << std::endl;
+  std::cout << *it << std::endl;
 }

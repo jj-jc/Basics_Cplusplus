@@ -1,6 +1,4 @@
-#include <istream>
 #include <future>
+#include <istream>
 
-int main()
-{
-}
+int main() {}

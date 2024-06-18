@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World! " << std::endl;
-    return true;
+int main() {
+  std::cout << "Hello World! " << std::endl;
+  return true;
 }
