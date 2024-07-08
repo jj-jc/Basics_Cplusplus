@@ -112,7 +112,6 @@ add_executable(Track_Memory_Allocation ${SRC})
 set(SRC lrvalues.cpp)
 add_executable(lrvalues ${SRC})
 
-
 ## set up boost dependency
 find_package(Boost 1.45.0 REQUIRED) 
 
@@ -121,3 +120,5 @@ if(Boost_FOUND)
     add_executable(DeducingTypes DeducingTypes.cpp) 
     target_link_libraries(DeducingTypes ${Boost_LIBRARIES})
 endif()
+
+add_executable(Item7 Item7.cpp)
