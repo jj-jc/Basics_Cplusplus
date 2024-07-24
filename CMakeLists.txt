@@ -122,3 +122,5 @@ if(Boost_FOUND)
 endif()
 
 add_executable(Item7 Item7.cpp)
+
+add_executable(Item18 Item18.cpp)
