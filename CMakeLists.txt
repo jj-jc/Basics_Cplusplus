@@ -123,4 +123,20 @@ endif()
 
 add_executable(Item7 Item7.cpp)
 
-add_executable(Item18 Item18.cpp)
+add_executable(Item18 Item18.cpp Item18.hpp)
+
+
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG main
+)
+FetchContent_MakeAvailable(googletest)
+
+
+add_executable(Item18Test tests/Item18Test.cpp Item18.cpp)
+target_link_libraries(Item18Test gtest gtest_main)
+
+add_executable(SampleTest tests/SampleTest.cpp)
+target_link_libraries(SampleTest gtest gtest_main)

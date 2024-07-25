@@ -8,32 +8,18 @@
  * @copyright Copyright (c) 2024
  *
  */
+#include "Item18.hpp"
 
-#include <iostream>
-#include <memory>
-#include <string>
-
-class Investment {
-  std::string name_{"Investment"};
-  template <typename T>
-  std::unique_ptr<Investment> makeInvestment(T&& param);
-};
-
-class Stock : public Investment {};
-
-class Bond : public Investment {};
-
-class RealEstate : public Investment {};
-
-int main() {
-  std::cout << "Hello Item18\n";
-
-  return true;
+std::unique_ptr<Investment> Investment::makeInvestment() {
+  std::cout << "This is the makeInvestment factory method!\n";
+  auto pInv = std::make_unique<Investment>();
+  return pInv;
 }
 
-template <typename T>
-std::unique_ptr<Investment> Investment::makeInvestment(T&& param) {
-  std::cout << "This is the makeInvestment factory method!\n";
-  pInv = std::make_unique<Investment>();
-  return pInv;
+Investment::Investment() {
+  std::cout << "This is the Investment constructor!\n";
+}
+
+Investment::~Investment() {
+  std::cout << "This is the Investment destructor!\n";
 }
