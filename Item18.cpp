@@ -16,10 +16,16 @@ std::unique_ptr<Investment> Investment::makeInvestment() {
   return pInv;
 }
 
-Investment::Investment() {
-  std::cout << "This is the Investment constructor!\n";
+std::unique_ptr<Investment> Stock::makeInvestment() {
+  std::cout << "Stock - This is the makeInvestment factory method!\n";
+  auto pInv = std::make_unique<Stock>();
+  return pInv;
 }
 
-Investment::~Investment() {
-  std::cout << "This is the Investment destructor!\n";
+Stock::Stock() { Investment::name_ = "Stock"; }
+
+std::unique_ptr<Investment> Bond::makeInvestment() {
+  std::cout << "Bond - This is the makeInvestment factory method!\n";
+  auto pInv = std::make_unique<Bond>();
+  return pInv;
 }
