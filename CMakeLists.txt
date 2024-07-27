@@ -125,7 +125,7 @@ add_executable(Item7 Item7.cpp)
 
 add_executable(Item18 Item18.cpp Item18.hpp)
 
-
+## Include googleTest dependency without having inside the project
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -134,9 +134,22 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+FetchContent_Declare(
+  spdlog
+  GIT_REPOSITORY https://github.com/gabime/spdlog.git
+  GIT_TAG        v1.x  # Use the latest release from the 1.x branch
+)
+
+FetchContent_MakeAvailable(spdlog)
+
 
 add_executable(Item18Test tests/Item18Test.cpp Item18.cpp)
 target_link_libraries(Item18Test gtest gtest_main)
 
 add_executable(SampleTest tests/SampleTest.cpp)
 target_link_libraries(SampleTest gtest gtest_main)
+
+add_executable(Item25Test tests/Item25Test.cpp)
+target_link_libraries(Item25Test gtest gtest_main)
+target_link_libraries(Item25Test spdlog::spdlog)
+
