@@ -60,6 +60,18 @@ TEST(Item25, spdlog) {
 TEST(Item25, logAndAdd) {
   std::string text = "Text";
   logAndAdd(text);
-  logAndAdd(std::string("Text2"));
-  logAndAdd("Text3");
+  logAndAdd(std::string("Text2"));  ///< Copy into a temporal std::string when
+                                    ///< it is possible to simply move
+  logAndAdd("Text3");  //< Copy into a temporal std::string when it is no
+                       ///< reason to pay even for move, much less a copy
+}
+
+TEST(Item25, logAndAddImprovement) {
+  std::string text = "Text";
+  logAndAddImprovement(text);  // Copy lvalue into mulsitset
+  logAndAddImprovement(
+      std::string("Text2"));      // move rvalue instead of copying it
+  logAndAddImprovement("Text3");  // create std::string in multiset instead of
+                                  // copying a temporary std::string. Is passing
+                                  // on multiset direclty the string literal.
 }

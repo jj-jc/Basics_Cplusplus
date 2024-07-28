@@ -81,7 +81,24 @@ Widget operator+(Widget&& lhs, const Widget& rhs) {
 }
 
 void logAndAdd(const std::string& name) {
-  auto now = std::chrono::system_clock::now();
   spdlog::info("Added name: {}", name);
   names.emplace(name);
+}
+
+/**
+ * @brief Logs the addition of a name and adds it to the `names` container.
+ *
+ * This function takes a name, logs it using `spdlog::info()`, and adds it to
+ * the `names` container using `names.emplace()`. The name is forwarded using
+ * `std::forward<T>()` to preserve its value category.
+ *
+ * @tparam T The type of the name parameter, which can be deduced automatically.
+ * @param name The name to be added.
+ */
+template <class T>
+void logAndAddImprovement(T&& name) {
+  spdlog::info("Added name: {}", name);
+  // Due to universal reference it is possible to change some behaviour and move
+  // every time name is an rvalue
+  names.emplace(std::forward<T>(name));
 }
