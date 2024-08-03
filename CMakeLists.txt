@@ -153,3 +153,6 @@ add_executable(Item25Test tests/Item25Test.cpp)
 target_link_libraries(Item25Test gtest gtest_main)
 target_link_libraries(Item25Test spdlog::spdlog)
 
+add_executable(LambdaTest tests/LambdaTest.cpp Lambda.hpp)
+target_link_libraries(LambdaTest gtest gtest_main)
+target_link_libraries(LambdaTest spdlog::spdlog)
